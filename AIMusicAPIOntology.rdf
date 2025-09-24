@@ -1,0 +1,901 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/ontologies/AIMusicAPIOntology/"
+     xml:base="http://www.semanticweb.org/ontologies/AIMusicAPIOntology/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:GAIToolsOntology="http://www.semanticweb.org/ontologies/GAIToolsOntology#"
+     xmlns:AIMusicAPIOntology="http://www.semanticweb.org/ontologies/AIMusicAPIOntology#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/ontologies/AIMusicAPIOntology">
+        <rdfs:comment>Ontology of AI music API of providers that use AI to generate music. For now, the most of the ontology is created according to Suno API that is publicly available at https://docs.sunoapi.org/
+The alternatives like Usio does not yet (September 2025) have publicly available API.</rdfs:comment>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/AIMusicAPIOntology#describes -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/AIMusicAPIOntology#describes">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/AIMusicAPIOntology#AIMusicToolDescription"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/AIMusicAPIOntology#Service"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/AIMusicAPIOntology#hasApi -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/AIMusicAPIOntology#hasApi">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/AIMusicAPIOntology#AIMusicTool"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/AIMusicAPIOntology#Api"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/AIMusicAPIOntology#hasAuthenticationMethod -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/AIMusicAPIOntology#hasAuthenticationMethod">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/AIMusicAPIOntology#Api"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/AIMusicAPIOntology#AuthenticationMethod"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/AIMusicAPIOntology#hasCallback -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/AIMusicAPIOntology#hasCallback">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/AIMusicAPIOntology#ApiResource"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/AIMusicAPIOntology#WebhookCallbacks"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/AIMusicAPIOntology#hasIdentifier -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/AIMusicAPIOntology#hasIdentifier">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/AIMusicAPIOntology#ApiResource"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/AIMusicAPIOntology#hasParameter -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/AIMusicAPIOntology#hasParameter">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/AIMusicAPIOntology#RestHandler"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/AIMusicAPIOntology#RestParameter"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/AIMusicAPIOntology#hasRequestData -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/AIMusicAPIOntology#hasRequestData">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/AIMusicAPIOntology#RestHandler"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/AIMusicAPIOntology#RequestData"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/AIMusicAPIOntology#hasResources -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/AIMusicAPIOntology#hasResources">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/AIMusicAPIOntology#Api"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/AIMusicAPIOntology#ApiResource"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/AIMusicAPIOntology#hasRestHandler -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/AIMusicAPIOntology#hasRestHandler">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/AIMusicAPIOntology#ApiResource"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/AIMusicAPIOntology#RestHandler"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/AIMusicAPIOntology#isDescribedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/AIMusicAPIOntology#isDescribedBy">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/AIMusicAPIOntology#Service"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/AIMusicAPIOntology#AIMusicToolDescription"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/AIMusicAPIOntology#isProvidedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/AIMusicAPIOntology#isProvidedBy">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/AIMusicAPIOntology#AIMusicTool"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/AIMusicAPIOntology#ToolProvider"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/AIMusicAPIOntology#apiDocumentationUrl -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/AIMusicAPIOntology#apiDocumentationUrl">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/AIMusicAPIOntology#Api"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/AIMusicAPIOntology#apiName -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/AIMusicAPIOntology#apiName">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/AIMusicAPIOntology#Api"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/AIMusicAPIOntology#apiResourceDescription -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/AIMusicAPIOntology#apiResourceDescription">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/AIMusicAPIOntology#ApiResource"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/AIMusicAPIOntology#apiResourceName -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/AIMusicAPIOntology#apiResourceName">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/AIMusicAPIOntology#ApiResource"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/AIMusicAPIOntology#apiResourceUrl -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/AIMusicAPIOntology#apiResourceUrl">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/AIMusicAPIOntology#ApiResource"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/AIMusicAPIOntology#parameterDescription -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/AIMusicAPIOntology#parameterDescription">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/AIMusicAPIOntology#RestParameter"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/AIMusicAPIOntology#parameterIsRequired -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/AIMusicAPIOntology#parameterIsRequired">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/AIMusicAPIOntology#RestParameter"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/AIMusicAPIOntology#parameterName -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/AIMusicAPIOntology#parameterName">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/AIMusicAPIOntology#RestParameter"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/AIMusicAPIOntology#providerName -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/AIMusicAPIOntology#providerName">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/AIMusicAPIOntology#ToolProvider"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/AIMusicAPIOntology#toolDescription -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/AIMusicAPIOntology#toolDescription">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/AIMusicAPIOntology#AIMusicTool"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/AIMusicAPIOntology#toolName -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/AIMusicAPIOntology#toolName">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/AIMusicAPIOntology#AIMusicTool"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/AIMusicAPIOntology#toolUrl -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ontologies/AIMusicAPIOntology#toolUrl">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/AIMusicAPIOntology#AIMusicTool"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#topDataProperty -->
+
+    <rdf:Description rdf:about="http://www.w3.org/2002/07/owl#topDataProperty">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/AIMusicAPIOntology#ApiResource"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/AIMusicAPIOntology#AIMusicTool -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/AIMusicAPIOntology#AIMusicTool"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/AIMusicAPIOntology#AIMusicToolDescription -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/AIMusicAPIOntology#AIMusicToolDescription"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/AIMusicAPIOntology#AddInstrumental -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/AIMusicAPIOntology#AddInstrumental">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/AIMusicAPIOntology#MusicGenerationApiResource"/>
+        <rdfs:comment>Musical accompaniment tailored to an uploaded audio file — typically a vocal stem or melody track. It helps users instantly flesh out their vocal ideas with high-quality backing music, all without needing a producer.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/AIMusicAPIOntology#AddVocals -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/AIMusicAPIOntology#AddVocals">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/AIMusicAPIOntology#MusicGenerationApiResource"/>
+        <rdfs:comment>It layers AI-generated vocals on top of an existing instrumental. Given a prompt (e.g., lyrical concept or musical mood) and optional audio, it produces vocal output harmonized with the provided track.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/AIMusicAPIOntology#Api -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/AIMusicAPIOntology#Api"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/AIMusicAPIOntology#ApiKeysAuthentication -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/AIMusicAPIOntology#ApiKeysAuthentication">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/AIMusicAPIOntology#AuthenticationMethod"/>
+        <rdfs:comment>API keys are another option for REST API authentication. In this approach, the server assigns a unique generated value to a first-time client. Whenever the client tries to access resources, it uses the unique API key to verify itself. API keys are less secure because the client has to transmit the key, which makes it vulnerable to network theft.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/AIMusicAPIOntology#ApiResource -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/AIMusicAPIOntology#ApiResource"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/AIMusicAPIOntology#AudioProcessingApi -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/AIMusicAPIOntology#AudioProcessingApi">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/AIMusicAPIOntology#Api"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/AIMusicAPIOntology#AudioProcessingApiResource -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/AIMusicAPIOntology#AudioProcessingApiResource">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/AIMusicAPIOntology#ApiResource"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/AIMusicAPIOntology#AudioSeparationCallbacks -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/AIMusicAPIOntology#AudioSeparationCallbacks">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/AIMusicAPIOntology#WebhookCallbacks"/>
+        <rdfs:comment>When vocal separation tasks are completed, the system will send results to your provided callback URL via POST request.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/AIMusicAPIOntology#AuthenticationMethod -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/AIMusicAPIOntology#AuthenticationMethod"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/AIMusicAPIOntology#BasicHTTPAuthentication -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/AIMusicAPIOntology#BasicHTTPAuthentication">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/AIMusicAPIOntology#AuthenticationMethod"/>
+        <rdfs:comment>n basic authentication, the client sends the user name and password in the request header. It encodes them with base64, which is an encoding technique that converts the pair into a set of 64 characters for safe transmission.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/AIMusicAPIOntology#BearerHttpAuthentication -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/AIMusicAPIOntology#BearerHttpAuthentication">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/AIMusicAPIOntology#AuthenticationMethod"/>
+        <rdfs:comment>The term bearer authentication refers to the process of giving access control to the token bearer. The bearer token is typically an encrypted string of characters that the server generates in response to a login request. The client sends the token in the request headers to access resources.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/AIMusicAPIOntology#BoostMusicStyle -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/AIMusicAPIOntology#BoostMusicStyle">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/AIMusicAPIOntology#AudioProcessingApiResource"/>
+        <rdfs:comment>The ‘Boost Your Style’ feature will significantly enhance users’ ability to describe and control style.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/AIMusicAPIOntology#ConverttoWAVFormat -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/AIMusicAPIOntology#ConverttoWAVFormat">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/AIMusicAPIOntology#AudioProcessingApiResource"/>
+        <rdfs:comment>Convert existing music tracks to high-quality WAV format.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/AIMusicAPIOntology#CreateMusicVideo -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/AIMusicAPIOntology#CreateMusicVideo">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/AIMusicAPIOntology#MusicVideoApiResource"/>
+        <rdfs:comment>Generate an MP4 video with visualizations for a music track.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/AIMusicAPIOntology#DeleteRestHandler -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/AIMusicAPIOntology#DeleteRestHandler">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/AIMusicAPIOntology#RestHandler"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/AIMusicAPIOntology#ExtendMusic -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/AIMusicAPIOntology#ExtendMusic">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/AIMusicAPIOntology#MusicGenerationApiResource"/>
+        <rdfs:comment>Extend or modify existing music tracks.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/AIMusicAPIOntology#GenerateLyrics -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/AIMusicAPIOntology#GenerateLyrics">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/AIMusicAPIOntology#LyricsCreationApiResource"/>
+        <rdfs:comment>Create lyrics for music using AI models without generating audio tracks.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/AIMusicAPIOntology#GenerateMusic -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/AIMusicAPIOntology#GenerateMusic">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/AIMusicAPIOntology#MusicGenerationApiResource"/>
+        <rdfs:comment>This is the key endpoint used to generate AI music.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/AIMusicAPIOntology#GetLyricsGenerationDetails -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/AIMusicAPIOntology#GetLyricsGenerationDetails">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/AIMusicAPIOntology#UtilityApiResource"/>
+        <rdfs:comment>Retrieve detailed information about a lyrics generation task, including status, parameters, and results.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/AIMusicAPIOntology#GetMusicCoverDetails -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/AIMusicAPIOntology#GetMusicCoverDetails">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/AIMusicAPIOntology#MusicGenerationApiResource"/>
+        <rdfs:comment>Get detailed information about music cover generation tasks.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/AIMusicAPIOntology#GetMusicGenerationDetails -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/AIMusicAPIOntology#GetMusicGenerationDetails">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/AIMusicAPIOntology#UtilityApiResource"/>
+        <rdfs:comment>Retrieve detailed information about a music generation task, including status, parameters, and results.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/AIMusicAPIOntology#GetRemainingCredits -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/AIMusicAPIOntology#GetRemainingCredits">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/AIMusicAPIOntology#UtilityApiResource"/>
+        <rdfs:comment>Retrieve the current balance of available credits for your account.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/AIMusicAPIOntology#GetRestHandler -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/AIMusicAPIOntology#GetRestHandler">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/AIMusicAPIOntology#RestHandler"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/AIMusicAPIOntology#LyricsCreationApi -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/AIMusicAPIOntology#LyricsCreationApi">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/AIMusicAPIOntology#Api"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/AIMusicAPIOntology#LyricsCreationApiResource -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/AIMusicAPIOntology#LyricsCreationApiResource">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/AIMusicAPIOntology#ApiResource"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/AIMusicAPIOntology#LyricsGenerationCallbacks -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/AIMusicAPIOntology#LyricsGenerationCallbacks">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/AIMusicAPIOntology#WebhookCallbacks"/>
+        <rdfs:comment>When lyrics generation tasks are completed, the system will send results to your provided callback URL via POST request.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/AIMusicAPIOntology#MusicGenerationApi -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/AIMusicAPIOntology#MusicGenerationApi">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/AIMusicAPIOntology#Api"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/AIMusicAPIOntology#MusicGenerationApiResource -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/AIMusicAPIOntology#MusicGenerationApiResource">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/AIMusicAPIOntology#ApiResource"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/AIMusicAPIOntology#MusicGenerationCallbacks -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/AIMusicAPIOntology#MusicGenerationCallbacks">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/AIMusicAPIOntology#WebhookCallbacks"/>
+        <rdfs:comment>When music generation tasks are completed, the system will send results to your provided callback URL via POST request.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/AIMusicAPIOntology#MusicVideoApi -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/AIMusicAPIOntology#MusicVideoApi">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/AIMusicAPIOntology#Api"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/AIMusicAPIOntology#MusicVideoApiResource -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/AIMusicAPIOntology#MusicVideoApiResource">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/AIMusicAPIOntology#ApiResource"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/AIMusicAPIOntology#MusicVideoGenerationCallbacks -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/AIMusicAPIOntology#MusicVideoGenerationCallbacks">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/AIMusicAPIOntology#WebhookCallbacks"/>
+        <rdfs:comment>When music video generation tasks are completed, the system will send results to your provided callback URL via POST request</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/AIMusicAPIOntology#OAuthAuthentication -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/AIMusicAPIOntology#OAuthAuthentication">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/AIMusicAPIOntology#AuthenticationMethod"/>
+        <rdfs:comment>OAuth combines passwords and tokens for highly secure login access to any system. The server first requests a password and then asks for an additional token to complete the authorization process. It can check the token at any time and also over time with a specific scope and longevity.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/AIMusicAPIOntology#PostRestHandler -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/AIMusicAPIOntology#PostRestHandler">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/AIMusicAPIOntology#RestHandler"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/AIMusicAPIOntology#PutRestHandler -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/AIMusicAPIOntology#PutRestHandler">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/AIMusicAPIOntology#RestHandler"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/AIMusicAPIOntology#RequestData -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/AIMusicAPIOntology#RequestData">
+        <rdfs:comment>REST API requests might include data for the POST, PUT, and other HTTP methods to work successfully.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/AIMusicAPIOntology#RestHandler -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/AIMusicAPIOntology#RestHandler"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/AIMusicAPIOntology#RestParameter -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/AIMusicAPIOntology#RestParameter">
+        <rdfs:comment>Preferred vocal gender for generated vocals. Optional.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/AIMusicAPIOntology#RestService -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/AIMusicAPIOntology#RestService">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/AIMusicAPIOntology#Service"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/AIMusicAPIOntology#Service -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/AIMusicAPIOntology#Service"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/AIMusicAPIOntology#ToolProvider -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/AIMusicAPIOntology#ToolProvider"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/AIMusicAPIOntology#UploadAndCoverAudio -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/AIMusicAPIOntology#UploadAndCoverAudio">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/AIMusicAPIOntology#MusicGenerationApiResource"/>
+        <rdfs:comment>Covers an audio track by transforming it into a new style while retaining its core melody. The expected result is a refreshed audio track with a new style, keeping the original melody intact.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/AIMusicAPIOntology#UploadAndExtendAudio -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/AIMusicAPIOntology#UploadAndExtendAudio">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/AIMusicAPIOntology#MusicGenerationApiResource"/>
+        <rdfs:comment>Extends audio tracks while preserving the original style of the audio track. The expected result is a longer track that seamlessly continues the input style.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/AIMusicAPIOntology#UtilityApi -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/AIMusicAPIOntology#UtilityApi">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/AIMusicAPIOntology#Api"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/AIMusicAPIOntology#UtilityApiResource -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/AIMusicAPIOntology#UtilityApiResource">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/AIMusicAPIOntology#ApiResource"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/AIMusicAPIOntology#VocalAndInstrumentStemSeparation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/AIMusicAPIOntology#VocalAndInstrumentStemSeparation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ontologies/AIMusicAPIOntology#AudioProcessingApiResource"/>
+        <rdfs:comment>Split tracks created into clean vocal, accompaniment, or per‑instrument stems with state‑of‑the‑art source‑separation AI.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/AIMusicAPIOntology#WebhookCallbacks -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ontologies/AIMusicAPIOntology#WebhookCallbacks">
+        <rdfs:comment>All major endpoints support webhook callbacks for real-time notifications. A webhook callback is a web address (URL) that a source application uses to send real-time, event-triggered data to a different application or service. It functions as an HTTP POST request initiated by the source when a specific event, such as a code push or a purchase, occurs. The target application listens at this designated callback URL, receiving the information without needing to constantly &quot;poll&quot; the source for updates</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/AIMusicAPIOntology#ApiSunoAI -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/AIMusicAPIOntology#ApiSunoAI">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/AIMusicAPIOntology#Api"/>
+        <AIMusicAPIOntology:apiDocumentationUrl>https://docs.sunoapi.org/</AIMusicAPIOntology:apiDocumentationUrl>
+        <AIMusicAPIOntology:apiName>Suno AI API</AIMusicAPIOntology:apiName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/AIMusicAPIOntology#GenerateSunoAIMusic -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/AIMusicAPIOntology#GenerateSunoAIMusic">
+        <rdfs:comment>This is the key endpoint in the Suno API. Each request returns exactly 2 songs.
+
+    Stream URL: Available in 30-40 seconds.
+    Downloadable song URL: Ready in 2-3 minutes.
+
+Concurrency limit: 20 requests every 10 seconds. Exceeding this will result in request rejection. Please review the parameters carefully to ensure proper use.
+​
+Parameter Usage Guide
+
+    When customMode is true (Custom Mode):
+        If instrumental is true: style and title are required
+        If instrumental is false: style, prompt, and title are required
+        Prompt length limit:
+            For V3_5 and V4 models: 3000 characters
+            For V4_5 and V4_5PLUS models: 5000 characters
+        Style length limit:
+            For V3_5 and V4 models: 200 characters
+            For V4_5 and V4_5PLUS models: 1000 characters
+        title length limit: 80 characters
+    When customMode is false (Non-custom Mode):
+        Only prompt is required regardless of instrumental setting
+        prompt length limit: 400 characters
+        Other parameters should be left empty</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/AIMusicAPIOntology#SunoAUTool -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/AIMusicAPIOntology#SunoAUTool">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/AIMusicAPIOntology#AIMusicTool"/>
+        <AIMusicAPIOntology:toolDescription>Suno AI, or simply Suno, is a generative artificial intelligence music creation program designed to generate realistic songs that combine vocals and instrumentation, or are purely instrumental.</AIMusicAPIOntology:toolDescription>
+        <AIMusicAPIOntology:toolName>Suno AI</AIMusicAPIOntology:toolName>
+        <AIMusicAPIOntology:toolUrl>https://suno.com/</AIMusicAPIOntology:toolUrl>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/AIMusicAPIOntology#SunoParameterAudioWeight -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/AIMusicAPIOntology#SunoParameterAudioWeight">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/AIMusicAPIOntology#RestParameter"/>
+        <AIMusicAPIOntology:parameterDescription>Weight of the input audio influence (where applicable). Range 0.00–1.00.</AIMusicAPIOntology:parameterDescription>
+        <AIMusicAPIOntology:parameterName>audioWeight</AIMusicAPIOntology:parameterName>
+        <rdfs:comment>Weight of the input audio influence (where applicable). Range 0.00–1.00.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/AIMusicAPIOntology#SunoParameterCallbackURL -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/AIMusicAPIOntology#SunoParameterCallbackURL">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/AIMusicAPIOntology#RestParameter"/>
+        <AIMusicAPIOntology:parameterDescription>The URL to receive task completion notifications when music generation is complete.</AIMusicAPIOntology:parameterDescription>
+        <AIMusicAPIOntology:parameterName>callback URL</AIMusicAPIOntology:parameterName>
+        <rdfs:comment>The URL to receive task completion notifications when music generation is complete.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/AIMusicAPIOntology#SunoParameterCustomMode -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/AIMusicAPIOntology#SunoParameterCustomMode">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/AIMusicAPIOntology#RestParameter"/>
+        <AIMusicAPIOntology:parameterDescription>Enables Custom Mode for advanced audio generation settings.
+
+    Set to true to use Custom Mode (requires style and title; prompt required if instrumental is false). The prompt will be strictly used as lyrics if instrumental is false.
+    Set to false for Non-custom Mode (only prompt is required). Lyrics will be auto-generated based on the prompt.</AIMusicAPIOntology:parameterDescription>
+        <AIMusicAPIOntology:parameterName>custom mode</AIMusicAPIOntology:parameterName>
+        <rdfs:comment>Enables Custom Mode for advanced audio generation settings.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/AIMusicAPIOntology#SunoParameterInstrumental -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/AIMusicAPIOntology#SunoParameterInstrumental">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/AIMusicAPIOntology#RestParameter"/>
+        <AIMusicAPIOntology:parameterDescription>Determines if the audio should be instrumental (no lyrics).
+
+    In Custom Mode (customMode: true):
+        If true: Only style and title are required.
+        If false: style, title, and prompt are required (with prompt used as the exact lyrics).
+    In Non-custom Mode (customMode: false): No impact on required fields (prompt only). Lyrics are auto-generated if instrumental is false.</AIMusicAPIOntology:parameterDescription>
+        <AIMusicAPIOntology:parameterName>instrumental</AIMusicAPIOntology:parameterName>
+        <rdfs:comment>Determines if the audio should be instrumental (no lyrics).</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/AIMusicAPIOntology#SunoParameterModel -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/AIMusicAPIOntology#SunoParameterModel">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/AIMusicAPIOntology#RestParameter"/>
+        <AIMusicAPIOntology:parameterDescription>The model version to use for audio generation.
+
+    Available options:
+        V4_5: Superior genre blending with smarter prompts and faster output, up to 8 minutes.
+        V4: Best audio quality with refined song structure, up to 4 minutes.
+        V3_5: Solid arrangements with creative diversity, up to 4 minutes.</AIMusicAPIOntology:parameterDescription>
+        <AIMusicAPIOntology:parameterName>model</AIMusicAPIOntology:parameterName>
+        <rdfs:comment>The model version to use for audio generation.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/AIMusicAPIOntology#SunoParameterNegativeTags -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/AIMusicAPIOntology#SunoParameterNegativeTags">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/AIMusicAPIOntology#RestParameter"/>
+        <AIMusicAPIOntology:parameterDescription>Music styles or traits to exclude from the generated audio.
+
+    Optional. Use to avoid specific styles.
+    Example: &quot;Heavy Metal, Upbeat Drums&quot;</AIMusicAPIOntology:parameterDescription>
+        <AIMusicAPIOntology:parameterName>negative tags</AIMusicAPIOntology:parameterName>
+        <rdfs:comment>Music styles or traits to exclude from the generated audio.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/AIMusicAPIOntology#SunoParameterPrompt -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/AIMusicAPIOntology#SunoParameterPrompt">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/AIMusicAPIOntology#RestParameter"/>
+        <AIMusicAPIOntology:parameterDescription>A description of the desired audio content.
+
+    In Custom Mode (customMode: true): Required if instrumental is false. The prompt will be strictly used as the lyrics and sung in the generated track. Character limits by model:
+        V3_5 &amp; V4: Maximum 3000 characters
+        V4_5 &amp; V4_5PLUS: Maximum 5000 characters
+        Example: &quot;A calm and relaxing piano track with soft melodies&quot;
+    In Non-custom Mode (customMode: false): Always required. The prompt serves as the core idea, and lyrics will be automatically generated based on it (not strictly matching the input). Maximum 400 characters.
+    Example: &quot;A short relaxing piano tune&quot;</AIMusicAPIOntology:parameterDescription>
+        <AIMusicAPIOntology:parameterName>prompt</AIMusicAPIOntology:parameterName>
+        <rdfs:comment>A description of the desired audio content.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/AIMusicAPIOntology#SunoParameterStyle -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/AIMusicAPIOntology#SunoParameterStyle">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/AIMusicAPIOntology#RestParameter"/>
+        <AIMusicAPIOntology:parameterDescription>The music style or genre for the audio.
+
+    Required in Custom Mode (customMode: true). Examples: &quot;Jazz&quot;, &quot;Classical&quot;, &quot;Electronic&quot;.
+        For V3_5 and V4 models: Max length: 200 characters.
+        For V4_5 and V4_5PLUS models: Max length: 1000 characters.
+        Example: &quot;Classical&quot;
+    In Non-custom Mode (customMode: false): Leave empty.</AIMusicAPIOntology:parameterDescription>
+        <AIMusicAPIOntology:parameterName>style</AIMusicAPIOntology:parameterName>
+        <rdfs:comment>The music style or genre for the audio.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/AIMusicAPIOntology#SunoParameterStyleWeight -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/AIMusicAPIOntology#SunoParameterStyleWeight">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/AIMusicAPIOntology#RestParameter"/>
+        <AIMusicAPIOntology:parameterDescription>Weight of the provided style guidance. Range 0.00–1.00.
+Required range: 0 &lt;= x &lt;= 1Must be a multiple of 0.01
+Example:
+
+0.65</AIMusicAPIOntology:parameterDescription>
+        <AIMusicAPIOntology:parameterName>style weight</AIMusicAPIOntology:parameterName>
+        <rdfs:comment>Weight of the provided style guidance. Range 0.00–1.00.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/AIMusicAPIOntology#SunoParameterTitle -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/AIMusicAPIOntology#SunoParameterTitle">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/AIMusicAPIOntology#RestParameter"/>
+        <AIMusicAPIOntology:parameterDescription>The title of the generated music track.
+
+    Required in Custom Mode (customMode: true). Max length: 80 characters.
+    Example: &quot;Peaceful Piano Meditation&quot;
+    In Non-custom Mode (customMode: false): Leave empty.</AIMusicAPIOntology:parameterDescription>
+        <AIMusicAPIOntology:parameterName>title</AIMusicAPIOntology:parameterName>
+        <rdfs:comment>The title of the generated music track.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/AIMusicAPIOntology#SunoParameterVocalGender -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/AIMusicAPIOntology#SunoParameterVocalGender">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/AIMusicAPIOntology#RestParameter"/>
+        <AIMusicAPIOntology:parameterDescription>Preferred vocal gender for generated vocals. Optional.
+Available options: m, f</AIMusicAPIOntology:parameterDescription>
+        <AIMusicAPIOntology:parameterName>vocal gender</AIMusicAPIOntology:parameterName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/AIMusicAPIOntology#SunoParameterWeirdnessConstraint -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/AIMusicAPIOntology#SunoParameterWeirdnessConstraint">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/AIMusicAPIOntology#RestParameter"/>
+        <AIMusicAPIOntology:parameterDescription>Constraint on creative deviation/novelty. Range 0.00–1.00.
+Required range: 0 &lt;= x &lt;= 1Must be a multiple of 0.01</AIMusicAPIOntology:parameterDescription>
+        <AIMusicAPIOntology:parameterName>weirdness constraint</AIMusicAPIOntology:parameterName>
+        <rdfs:comment>Constraint on creative deviation/novelty. Range 0.00–1.00.</rdfs:comment>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
+
