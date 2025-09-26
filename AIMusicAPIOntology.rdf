@@ -10,7 +10,7 @@
      xmlns:AIMusicAPIOntology="http://www.semanticweb.org/ontologies/AIMusicAPIOntology#">
     <owl:Ontology rdf:about="http://www.semanticweb.org/ontologies/AIMusicAPIOntology">
         <rdfs:comment>Ontology of AI music API of providers that use AI to generate music. For now, the most of the ontology is created according to Suno API that is publicly available at https://docs.sunoapi.org/
-The alternatives like Usio does not yet (September 2025) have publicly available API.</rdfs:comment>
+The alternatives like Udio does not yet (September 2025) have publicly available API.</rdfs:comment>
     </owl:Ontology>
     
 
@@ -58,14 +58,6 @@ The alternatives like Usio does not yet (September 2025) have publicly available
     <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/AIMusicAPIOntology#hasCallback">
         <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/AIMusicAPIOntology#ApiResource"/>
         <rdfs:range rdf:resource="http://www.semanticweb.org/ontologies/AIMusicAPIOntology#WebhookCallbacks"/>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- http://www.semanticweb.org/ontologies/AIMusicAPIOntology#hasIdentifier -->
-
-    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ontologies/AIMusicAPIOntology#hasIdentifier">
-        <rdfs:domain rdf:resource="http://www.semanticweb.org/ontologies/AIMusicAPIOntology#ApiResource"/>
     </owl:ObjectProperty>
     
 
@@ -892,6 +884,14 @@ Available options: m, f</AIMusicAPIOntology:parameterDescription>
 Required range: 0 &lt;= x &lt;= 1Must be a multiple of 0.01</AIMusicAPIOntology:parameterDescription>
         <AIMusicAPIOntology:parameterName>weirdness constraint</AIMusicAPIOntology:parameterName>
         <rdfs:comment>Constraint on creative deviation/novelty. Range 0.00–1.00.</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/AIMusicAPIOntology#UdioAITool -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ontologies/AIMusicAPIOntology#UdioAITool">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ontologies/AIMusicAPIOntology#AIMusicTool"/>
     </owl:NamedIndividual>
 </rdf:RDF>
 
